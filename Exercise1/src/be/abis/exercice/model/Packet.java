@@ -1,35 +1,34 @@
 package be.abis.exercice.model;
 
 public class Packet {
-    private String destinationAdress;
-    private String context;
 
-    public Packet(String destinationAdress, String context) {
-        this.destinationAdress = destinationAdress;
-        this.context = context;
+    // variable
+    private String destinationAddress;
+    private String contents;
+
+    //constructor
+
+    public Packet(String destinationAddress, String contents) {
+        this.destinationAddress = destinationAddress;
+        this.contents = contents;
+    }
+    // getter and setter
+
+    public String getDestinationAddress() {
+        return destinationAddress;
     }
 
-    public String getDestinationAdress() {
-        return destinationAdress;
+    public void setDestinationAddress(String destinationAddress) {
+        this.destinationAddress = destinationAddress;
     }
 
-    public void setDestinationAdress(String destinationAdress) {
-        this.destinationAdress = destinationAdress;
+    public String getContents() {
+        return contents;
     }
 
-    public String getContext() {
-        return context;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
-    public void setContext(String context) {
-        this.context = context;
-    }
 
-    @Override
-    public String toString() {
-        return "Packet{" +
-                "destinationAdress='" + destinationAdress + '\'' +
-                ", context='" + context + '\'' +
-                '}';
-    }
 }

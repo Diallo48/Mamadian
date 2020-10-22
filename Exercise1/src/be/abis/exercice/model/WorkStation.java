@@ -1,8 +1,8 @@
 package be.abis.exercice.model;
 
 public class WorkStation extends Node {
-    public WorkStation(String adress) {
-        super(adress);
+    public WorkStation(String address) {
+        super(address);
     }
 
     public void originate(Packet packet){

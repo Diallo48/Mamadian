@@ -17,6 +17,8 @@ public class TestLan {
         p1.setNextComponent(n2);
         n2.setNextComponent(p2);
         p2.setNextComponent(w);
+        ((WorkStation) w).originate(p);
+
 
 
 

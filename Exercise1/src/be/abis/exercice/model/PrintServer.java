@@ -1,19 +1,25 @@
 package be.abis.exercice.model;
 
 public class PrintServer extends Node {
-    public PrintServer(String adress) {
-        super(adress);
+    public PrintServer(String address) {
+        super(address);
     }
 
-    public void printPacket (Packet packet){
-        if (this.getAdress().equals(packet.getDestinationAdress())){
-            System.out.println(packet.toString()+" is printed by" + this.getAdress());
-            printPacket(packet);
+    @Override
+    public void receive(Packet packet) {
+        if (this.getAddress().equals(packet.getDestinationAddress())){
+            this.print(packet);
         }else{
             this.send(packet);
         }
+    }
+
+    public void print(Packet packet){
+        System.out.println("The print "+this.getAddress()+ " printed your message "+ packet.getContents());
+
         }
 
 
-    }
+
+}
 

@@ -1,20 +1,22 @@
 package be.abis.exercice.model;
 
 public abstract class LanComponent {
-    private String adress;
+    private String address;
     private LanComponent nextComponent;
 
-
-    public LanComponent(String adress) {
-        this.adress = adress;
+    // constructor
+    public LanComponent(String address) {
+        this.address = address;
     }
 
-    public String getAdress() {
-        return adress;
+    // getter and setter
+
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public LanComponent getNextComponent() {
@@ -25,14 +27,9 @@ public abstract class LanComponent {
         this.nextComponent = nextComponent;
     }
 
-    public abstract void send(Packet packet);
-    public abstract  void received(Packet packet);
+    // method must be abstract
 
-    @Override
-    public String toString() {
-        return "LanComponent{" +
-                "adress='" + adress + '\'' +
-                ", nextComponent=" + nextComponent +
-                '}';
-    }
+    public abstract void send(Packet packet);
+    public abstract  void receive(Packet packet);
+
 }
