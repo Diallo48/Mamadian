@@ -4,6 +4,7 @@ public abstract class LanComponent {
     private String adress;
     private LanComponent nextComponent;
 
+
     public LanComponent(String adress) {
         this.adress = adress;
     }
@@ -27,4 +28,11 @@ public abstract class LanComponent {
     public abstract void send(Packet packet);
     public abstract  void received(Packet packet);
 
+    @Override
+    public String toString() {
+        return "LanComponent{" +
+                "adress='" + adress + '\'' +
+                ", nextComponent=" + nextComponent +
+                '}';
+    }
 }

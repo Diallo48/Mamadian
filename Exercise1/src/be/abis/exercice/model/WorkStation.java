@@ -5,5 +5,7 @@ public class WorkStation extends Node {
         super(adress);
     }
 
-    public void originate(Packet packet){};
+    public void originate(Packet packet){
+        this.getNextComponent().send(packet);
+    }
 }

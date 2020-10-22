@@ -24,4 +24,12 @@ public class Packet {
     public void setContext(String context) {
         this.context = context;
     }
+
+    @Override
+    public String toString() {
+        return "Packet{" +
+                "destinationAdress='" + destinationAdress + '\'' +
+                ", context='" + context + '\'' +
+                '}';
+    }
 }
