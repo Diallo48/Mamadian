@@ -1,8 +1,14 @@
 package be.abis.exercice.model;
 
 public class PrintServer extends Node {
-    public PrintServer(String address) {
+    PrinterStrategy printerStrategy;
+    /*public PrintServer(String address) {
         super(address);
+    }*/
+
+    public PrintServer(String address, PrinterStrategy printerStrategy) {
+        super(address);
+        this.printerStrategy = printerStrategy;
     }
 
     @Override
@@ -14,9 +20,9 @@ public class PrintServer extends Node {
         }
     }
 
-    public void print(Packet packet){
+   public void print(Packet packet){
         System.out.println("The print "+this.getAddress()+ " printed your message "+ packet.getContents());
-
+        printerStrategy.print(packet);
         }
 
 
